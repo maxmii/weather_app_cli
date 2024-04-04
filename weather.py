@@ -1,4 +1,3 @@
-from wsgiref.simple_server import WSGIRequestHandler
 from dotenv import load_dotenv
 import os
 import argparse
@@ -163,12 +162,12 @@ class WeatherCLI:
         return display_params
 
     def check_temperature(self, temp, units="imperial"):
+        pass
         # if units == "imperial":
         #     match temp:
         #         case
         # else:
         #     match temp:
-
 
 if __name__ == "__main__":
     weather_cli = WeatherCLI()
@@ -179,3 +178,5 @@ if __name__ == "__main__":
     )
     weather_data = weather_cli.get_weather_data(user_url)
     weather_cli.display_weather_info(weather_data, user_args.imperial)
+else:
+    print("Error")
