@@ -131,6 +131,16 @@ class WeatherCLI:
         print(f"{temperature}°{'F' if imperial else 'C'}")
 
     def _select_weather_display_params(self, weather_id):
+        """
+        Selects the display parameters for a given weather condition.
+
+        Args:
+            weather_id (str): The weather condition identifier.
+
+        Returns:
+            tuple: A tuple containing the display symbol and the display style.
+
+        """
         style = Style()
         weather_conditions = WeatherConditions()
         match weather_id:
