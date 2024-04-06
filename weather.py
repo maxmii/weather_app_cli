@@ -179,5 +179,3 @@ if __name__ == "__main__":
     )
     weather_data = weather_cli.get_weather_data(user_url)
     weather_cli.display_weather_info(weather_data, user_args.imperial)
-else:
-    print("Error")
