@@ -26,9 +26,8 @@ class WeatherConditions:
 class WeatherCLI:
 
     def __init__(self):
-        self.api_key = os.getenv("WEATHER_API_KEY")
-        self.base_url = os.getenv("WEATHER_URL")
-        self.padding = 20
+        self.API_KEY = os.getenv("WEATHER_API_KEY")
+        self.BASE_URL = os.getenv("WEATHER_URL")
 
     def read_user_cli_args(self):
         """Handles the CLI user interactions.
@@ -62,11 +61,11 @@ class WeatherCLI:
             str: URL formatted for a call to OpenWeather's city name endpoint
         """
 
-        api_key = self.api_key
+        api_key = self.API_KEY
         city_name = " ".join(city_input)
         url_encoded_city_name = parse.quote(city_name)
         units = "imperial" if imperial else "metric"
-        url_request = f"{self.base_url}?q={url_encoded_city_name}&units={units}&appid={api_key}"
+        url_request = f"{self.BASE_URL}?q={url_encoded_city_name}&units={units}&appid={api_key}"
         return url_request
 
     def get_weather_data(self, query_url):
